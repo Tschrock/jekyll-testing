@@ -13,14 +13,14 @@
 <body>
 
     <header>
-        <img src="{{ site.icon }}" />
+        <img src="{{ site.icon | relative_url }}" />
         <nav>
             {% for node in site.pages %}
                 {% if node.ShowInHeader %}
                   {% if page.url == node.url %}
-                    <a class="active" href="#">{{node.title}}</a>
+                    <a class="active" href="#">{{ node.title }}</a>
                   {% else %}
-                    <a href="{{node.url}}">{{node.title}}</a>
+                    <a href="{{ node.url | relative_url }}">{{ node.title }}</a>
                   {% endif %}
                 {% endif %}
             {% endfor %}
