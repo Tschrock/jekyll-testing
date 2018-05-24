@@ -1,0 +1,131 @@
+---
+---
+
+// Variables
+
+$header-bg: #2e222c;
+$header-color: white;
+
+$body-bg: #eee;
+$body-color: black;
+
+$footer-bg: $header-bg;
+$footer-color: $header-color;
+
+$navitem-bg: transparent;
+$navitem-color: #f2f2f2;
+
+$navitem-hover-bg: #ddd;
+$navitem-hover-color: black;
+
+$navitem-active-bg: #120c18;
+$navitem-active-color: white;
+
+// HTML Overrides
+
+html,
+body {
+    margin: 0;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+// Theme Components
+
+body {
+    
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    
+    background-color: $body-bg;
+    color: $body-color;
+
+    > header {
+        text-align: center;
+
+        background-color: $header-bg;
+        color: $header-color;
+
+        > nav {
+            display: flex;
+            justify-content: center;
+
+            > a {
+                padding: 14px 16px;
+                font-size: 17px;
+                text-decoration: none;
+
+                background-color: $navitem-bg;
+                color: $navitem-color;
+
+                &:hover {
+                    background-color: $navitem-hover-bg;
+                    color: $navitem-hover-color;
+                }
+
+                &.active {
+                    background-color: $navitem-active-bg;
+                    color: $navitem-active-color;
+                }
+            }    
+        }
+    }
+
+    > main {
+        padding: 15px;
+        align-self: center;
+        flex: 1;
+    }
+
+    > footer {
+        text-align: center;
+
+        background-color: $footer-bg;
+        color: $footer-color;
+    }
+    
+}
+
+@media (min-width: 900px) {
+    body>main {
+        width: 90%;
+    }
+}
+
+@media (min-width: 1200px) {
+    body>main {
+        width: 80%;
+    }
+}
+
+@media (min-width: 1800px) {
+    body>main {
+        width: 70%;
+    }
+}
+
+.social-link {
+    display: inline-block;
+    padding: 10px;
+    margin: 10px;
+    color: #f2f2f2;
+    text-decoration: none;
+}
+
+// Theme Helpers
+
+.img-responsive {
+    max-width: 100%;
+    height: auto;
+}

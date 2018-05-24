@@ -1,0 +1,12 @@
+- name: Tumblr
+  icon-class: 'fab fa-tumblr'
+  url: '#'
+- name: Twitter
+  icon-class: 'fab fa-twitter'
+  url: '#'
+- name: YouTube
+  icon-class: 'fab fa-youtube'
+  url: '#'
+- name: Discord
+  icon-class: 'fab fa-discord'
+  url: '#'

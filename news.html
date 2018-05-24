@@ -1,0 +1,19 @@
+---
+title: News
+layout: default
+ShowInHeader: true
+---
+<style>
+    .news-item {
+            text-decoration: none;
+            color: #000;
+    }
+</style>
+{% for post in site.posts %}
+    <a class="news-item" href="{{ post.url }}">
+        <div>
+            <h3>{{ post.title }} <small>{{ post.date | date_to_string }}</small></h3>
+            <p>{{ post.excerpt }}</p>
+        </div>
+    </a>
+{% endfor %}
