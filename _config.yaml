@@ -1,3 +1,10 @@
 title: Test Site
 icon: /assets/img/icon.png
-permalink: pretty
+permalink: /:categories/:year/:month/:day/:title
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: post
+      category: news

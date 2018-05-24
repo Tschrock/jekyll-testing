@@ -10,7 +10,7 @@ ShowInHeader: true
     }
 </style>
 {% for post in site.posts %}
-    <a class="news-item" href="{{ post.url }}">
+    <a class="news-item" href="{{ post.url | relative_url }}">
         <div>
             <h3>{{ post.title }} <small>{{ post.date | date_to_string }}</small></h3>
             <p>{{ post.excerpt }}</p>
