@@ -1,0 +1,7 @@
+<footer>
+    {% for link in site.data.social-links %}
+        <a href="{{ link.url }}" class="social-link" title="{{ link.name }}">
+            <i class="{{ link.icon-class }} fa-fw fa-lg"></i>
+        </a>
+    {% endfor %}
+</footer>

@@ -1,0 +1,53 @@
+
+<meta property="og:type" content="website" />
+
+{% comment %} The page's title {% endcomment %}
+{% assign _title = page.title | default:site.title %}
+<meta property="og:title" content="{{ _title }}" />
+<meta name="twitter:title" content="{{ _title }}" />
+
+{% comment %} The site's name {% endcomment %}
+<meta property="og:site_name" content="{{ site.title }}">
+
+{% comment %} The page's description {% endcomment %}
+{% assign _description = page.description | default:page.summary | default:page.excerpt | default:site.description | default:site.summary %}
+<meta name="description" content="{{ _description }}" />
+<meta property="og:description" content="{{ _description }}" />
+<meta name="twitter:description" content="{{ _description }}" />
+
+{% comment %} The page's date {% endcomment %}
+{% assign _date = page.date | default:site.time %}
+<meta name="pubdate" content="{{ _date }}">
+
+{% comment %} The page's canonical url {% endcomment %}
+<meta property="og:url" content="{{ page.url | absolute_url }}" />
+
+{% comment %} The page's image {% endcomment %}
+{% assign _image = false %}
+{% assign _imagealt = false %}
+{% if page.image %}
+    {% assign _image = page.image %}
+    {% assign _imagealt = page.imagealt %}
+    <meta name="twitter:card" content="summary_large_image" />
+{% elsif page.icon %}
+    {% assign _image = page.icon %}
+    {% assign _imagealt = page.iconalt %}
+    <meta name="twitter:card" content="summary" />
+{% elsif site.image %}
+    {% assign _image = site.image %}
+    {% assign _imagealt = site.imagealt %}
+    <meta name="twitter:card" content="summary_large_image" />
+{% elsif site.icon %}
+    {% assign _image = site.icon %}
+    {% assign _imagealt = site.iconalt %}
+    <meta name="twitter:card" content="summary" />
+{% endif %}
+
+{% if _image %} 
+    <meta property="og:image" content="{{ _image }}" />
+    <meta name="twitter:image" content="{{ _image }}" />
+    {% if _imagealt %} 
+        <meta name="twitter:image:alt" content="{{ _imagealt }}" />
+        <meta property="og:image:alt" content="{{ _imagealt }}" />
+    {% endif %}
+{% endif %}

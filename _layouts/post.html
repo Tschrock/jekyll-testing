@@ -1,6 +1,18 @@
----
-layout: default
----
-<h1>{{ page.title }}</h1>
-<h3>{{ page.date | date_to_string }}</h3>
-{{ content }}
+<!DOCTYPE html>
+<html>
+<head>
+    {% include common/head.html %}
+    <title>{{ page.title }} - {{ site.title }}</title>
+</head>
+<body>
+    {% include common/header.html %}
+
+    <main>
+        <h1>{{ page.title }}</h1>
+        <h3>{{ page.date | date_to_string }}</h3>
+        {{ content }}
+    </main>
+    
+    {% include common/footer.html %}
+</body>
+</html>
