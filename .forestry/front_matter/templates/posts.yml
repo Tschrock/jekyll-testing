@@ -7,25 +7,37 @@ fields:
   type: text
   hidden: false
   default: ''
+  config:
+    required: true
+  description: The title of your post.
 - name: date
   label: Date
   type: datetime
   hidden: false
-  default: ''
+  default: 2018-08-16 04:00:00 +0000
+  config:
+    required: true
+    display_utc: false
+    date_format: MMMM DD, YYYY
+    time_format: h:mm A
+  description: The date of your post.
 - name: tags
   label: Tags
   type: tag_list
   hidden: false
   default: ''
+  description: Tags for your post.
 - name: layout
   label: Layout
   type: text
-  hidden: false
+  hidden: true
   default: post
+  config:
+    required: false
 - name: category
   label: Category
   type: tag_list
-  hidden: false
+  hidden: true
   default: news
 pages:
 - _posts/2018-05-24-test.md
