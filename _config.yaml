@@ -8,5 +8,9 @@ defaults:
     values:
       layout: post
       category: news
+  - scope:
+      path: ""
+    values:
+      layout: default
 plugins:
  - jekyll-menus
