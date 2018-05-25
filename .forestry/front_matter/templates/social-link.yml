@@ -23,4 +23,4 @@ fields:
     config:
       required: true
 data_files:
-- _data/social links.yaml
+- _data/Social Links.yaml
