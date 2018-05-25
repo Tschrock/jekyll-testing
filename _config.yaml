@@ -8,5 +8,3 @@ defaults:
     values:
       layout: post
       category: news
-plugins:
- - jekyll-menus

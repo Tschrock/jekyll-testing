@@ -15,11 +15,13 @@
     <header>
         <img src="{{ site.icon | relative_url }}" />
         <nav>
-            {% for item in site.menus.header %}
-                {% if page.url == item.url %}
-                    <a class="active" href="#" title="{{ item.title }}">{{ item.title }}</a>
-                {% else %}
-                    <a href="{{ item.url | relative_url }}" title="{{ item.title }}">{{ item.title }}</a>
+            {% for node in site.pages %}
+                {% if node.ShowInHeader %}
+                  {% if page.url == node.url %}
+                    <a class="active" href="#">{{ node.title }}</a>
+                  {% else %}
+                    <a href="{{ node.url | relative_url }}">{{ node.title }}</a>
+                  {% endif %}
                 {% endif %}
             {% endfor %}
         </nav>
