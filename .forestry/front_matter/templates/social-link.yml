@@ -22,3 +22,5 @@ fields:
     description: The url of the social link.
     config:
       required: true
+data_files:
+- _data/social links.yaml
