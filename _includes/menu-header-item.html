@@ -1,0 +1,5 @@
+{% if page.url == include.url %}
+    <a class="active" href="#" title="{{ include.title }}">{{ include.title }}</a>
+{% else %}
+    <a href="{{ include.url | relative_url }}" title="{{ include.title }}">{{ include.title }}</a>
+{% endif %}

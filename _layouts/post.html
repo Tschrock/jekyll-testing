@@ -1,46 +1,6 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ page.title }} - {{ site.title }}</title>
-    <link rel="stylesheet" href="{{ '/assets/css/theme.css' | relative_url }}" />
-    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js" integrity="sha384-xymdQtn1n3lH2wcu0qhcdaOpQwyoarkgLVxC/wZ5q7h9gHtxICrpcaSUfygqZGOe"
-        crossorigin="anonymous"></script>
-</head>
-
-<body>
-
-    <header>
-        <img src="{{ site.icon | relative_url }}" />
-        <nav>
-            {% for node in site.pages %}
-                {% if node.ShowInHeader %}
-                  {% if page.url == node.url %}
-                    <a class="active" href="#">{{ node.title }}</a>
-                  {% else %}
-                    <a href="{{ node.url | relative_url }}">{{ node.title }}</a>
-                  {% endif %}
-                {% endif %}
-            {% endfor %}
-        </nav>
-    </header>
-    
-    <main>
-            <h1>{{ page.title }}</h1>
-            <h3>{{ page.date | date_to_string }}</h3>
-            {{ content }}
-    </main>
-    
-    <footer>
-        {% for link in site.data.social_links %}
-            <a href="{{ link.url }}" class="social-link" title="{{ link.name }}">
-                <i class="{{ link.icon-class }} fa-fw fa-lg"></i>
-            </a>
-        {% endfor %}
-    </footer>
-
-</body>
-
-</html>
+---
+layout: default
+---
+<h1>{{ page.title }}</h1>
+<h3>{{ page.date | date_to_string }}</h3>
+{{ content }}

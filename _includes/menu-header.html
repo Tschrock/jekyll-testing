@@ -1,0 +1,27 @@
+
+{% if site.menus %}
+    
+    <nav>
+        {% for item in site.menus.header %}
+            {% include menu-header-item.html url=item.url title=item.title %}
+        {% endfor %}
+    </nav>
+    
+{% else %}
+
+    <nav>
+        {% assign pages = site.pages | where_exp:"item","item.menus.header" | group_by_exp:"item","item.menus.header.weight | default:-1" %}
+        {% assign pages = site.pages | where_exp:"item","item.menus == 'header'" | group_by_exp:"item","item.weight | default:-1" | concat:pages %}
+        {% assign pages = site.data.menus.header | group_by_exp:"item","item.weight | default:-1" | concat:pages %}
+        {% assign pages = pages | sort:"name" %}
+
+        {% for pageGroup in pages %}
+            {% for pageItem in pageGroup.items %}
+                {% assign itemUrl = pageItem.url %}
+                {% assign itemTitle = pageItem.menus.header.title | default:pageItem.title %}
+                {% include menu-header-item.html url=itemUrl title=itemTitle %}
+            {% endfor %}
+        {% endfor %}
+    </nav>
+
+{% endif %}

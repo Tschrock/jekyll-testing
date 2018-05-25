@@ -14,17 +14,7 @@
 
     <header>
         <img src="{{ site.icon | relative_url }}" />
-        <nav>
-            {% for node in site.pages %}
-                {% if node.ShowInHeader %}
-                  {% if page.url == node.url %}
-                    <a class="active" href="#">{{ node.title }}</a>
-                  {% else %}
-                    <a href="{{ node.url | relative_url }}">{{ node.title }}</a>
-                  {% endif %}
-                {% endif %}
-            {% endfor %}
-        </nav>
+        {% include menu-header.html %}
     </header>
     
     <main>
