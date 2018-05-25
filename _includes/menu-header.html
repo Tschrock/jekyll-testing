@@ -20,8 +20,8 @@
 
         {% for pageGroup in pages %}
             {% for pageItem in pageGroup.items %}
-                {% assign itemUrl = pageItem.url %}
-                {% assign itemTitle = pageItem.menus.header.title | default:pageItem.title %}
+                {% assign itemUrl = pageItem.menu.header.url | default:pageItem.menus.header.url | default:pageItem.url %}
+                {% assign itemTitle = pageItem.menu.header.title | default:pageItem.menus.header.title | default:pageItem.title %}
                 {% include menu-header-item.html url=itemUrl title=itemTitle %}
             {% endfor %}
         {% endfor %}
