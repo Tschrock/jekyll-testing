@@ -24,5 +24,8 @@ fields:
     description: The url of the social link.
     config:
       required: true
+  config:
+    labelField: name
+  description: aaaaaaaaa
 data_files:
 - _data/Social Links.yaml
