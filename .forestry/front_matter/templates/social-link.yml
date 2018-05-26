@@ -1,0 +1,29 @@
+---
+hide_body: true
+is_partial: false
+fields:
+- type: field_group_list
+  name: links
+  label: Social Links
+  fields:
+  - type: text
+    name: name
+    label: Name
+    config:
+      required: true
+    description: The name of the social link.
+  - type: text
+    label: Icon Class
+    name: icon-class
+    description: 'The css class of the icon to use. See: https://fontawesome.com/icons?d=gallery&s=brands&m=free'
+    config:
+      required: true
+  - type: text
+    label: URL
+    name: url
+    description: The url of the social link.
+    config:
+      required: true
+  config:
+    labelField: name
+  description: aaaaaaaaa
