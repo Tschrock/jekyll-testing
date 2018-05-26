@@ -28,4 +28,4 @@ fields:
     labelField: name
   description: aaaaaaaaa
 data_files:
-- _data/Social Links.yaml
+- _data/SocialLinks.yaml
