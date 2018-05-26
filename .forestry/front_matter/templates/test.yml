@@ -2,18 +2,13 @@
 hide_body: false
 is_partial: false
 fields:
-- type: field_group_list
-  name: test
-  label: Test
-  description: aaaaaaaaa
-  fields:
-  - type: text
-    name: hello
-    label: Hello
-    description: hi
-  - type: text
-    label: Foo
-    name: foo
-    description: the fo
+- type: text
+  name: hello
+  label: Hello
+  description: hi
+- type: text
+  label: Foo
+  name: foo
+  description: the fo
 data_files:
 - _data/test.yml
